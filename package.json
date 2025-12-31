@@ -4,9 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "dev": "node socket.js",
-    "build": "vite build",
-    "preview": "vite preview"
+    "start": "node socket.js"
   },
   "devDependencies": {
     "vite": "^6.1.0"
