@@ -31,7 +31,7 @@ wss.on("connection", function connection(webSocket, request) {
     // Convert queryParams to an object and spread it
     const queryParamsObj = Object.fromEntries(queryParams.entries());
 
-    fetch("http://thewatchtower.cc/api/analytics/record", {
+    fetch("https://watchtower.thewatchtower.ae/api/analytics/record", {
       headers: {
         accepts: "application/json",
       },
@@ -65,3 +65,4 @@ wss.on("close", () => {
 });
 
 console.log(`WebSocket server running on ws://localhost:${port}`);
+
