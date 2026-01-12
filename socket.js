@@ -4,6 +4,7 @@ const port = process.env.PORT || 8080;
 const wss = new WebSocketServer({ port });
 
 const TEST_SERVER = "https://watchtower.thewatchtower.ae/api/analytics/record";
+const LIVE_SERVER = "https://thewatchtower.com/api/analytics/record"
 
 function heartbeat() {
   console.log("received pong from", this.client_id);
@@ -33,7 +34,7 @@ wss.on("connection", function connection(webSocket, request) {
     // Convert queryParams to an object and spread it
     const queryParamsObj = Object.fromEntries(queryParams.entries());
 
-    fetch(TEST_SERVER, {
+    fetch(LIVE_SERVER, {
       headers: {
         accepts: "application/json",
       },
@@ -67,5 +68,6 @@ wss.on("close", () => {
 });
 
 console.log(`WebSocket server running on ws://localhost:${port}`);
+
 
 
